@@ -7,8 +7,16 @@
 body {
     height: 100vh;
     display: flex;
-    background: #060AB2;
+    background: rgb(191,76,5);
+    background: linear-gradient(0deg, rgba(191,76,5,1) 0%, rgba(253,177,45,1) 100%);
 }
+
+/*
+  width and height give a standard size 
+  margin auto centers the game board
+  flex adapts to screen size
+  perspecive sets z axis distance from user (lover value = bigger effect)
+*/
 
 .memory-game {
     width: 640px;
@@ -19,25 +27,41 @@ body {
     perspective: 1000px;
 }
 
+/*
+  calc for height and width makes 3 rows of 4 cards
+  position relative allows us to position the children of the memory cards
+  preserve 3d positions them in a 3d space instead of flattening it to the background
+  the transform .5 produces the movement effect
+*/
+
 .memory-card {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
     position: relative;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
-.memory-card: active{
+/*active when clicked*/
+
+.memory-card:active {
     transform: scale(0.97);
     transition: transform .2s;
 }
 
-.memory-card.flip{
+/*when the card is clicked JS activates this class and flips the card over*/
+
+.memory-card.flip {
     transform: rotateY(180deg);
 }
+
+/*
+  position absolute allows us to stack the front and back images
+  backface visibility hides the back of the robot
+*/
 
 .front-face,
 .back-face {
@@ -46,10 +70,12 @@ body {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background: #C7C6C6;
     backface-visibility: hidden;
 }
 
-.front-face{
+/*the transform shows the logo on the back of the card*/
+
+.front-face {
     transform: rotateY(180deg);
 }
