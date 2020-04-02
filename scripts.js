@@ -58,7 +58,7 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1000);
+    }, 750);
 }
 
 //function uses destructuring assignment to keep code short
