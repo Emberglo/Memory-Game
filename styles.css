@@ -1,14 +1,14 @@
 ﻿* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    width: 60%;
-    background: rgb(191,76,5);
-    background: linear-gradient(0deg, rgba(191,76,5,1) 0%, rgba(253,177,45,1) 100%);
+	height: 100vh;
+	width: 100%;
+	background: rgb(191, 76, 5);
+	background: linear-gradient(0deg, rgba(191, 76, 5, 1) 0%, rgba(253, 177, 45, 1) 100%);
 }
 
 /*
@@ -19,14 +19,14 @@ body {
 */
 
 .memory-game {
-    width: 80%;
-    height: 70%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    flex-wrap: wrap;
-    perspective: 1000px;
+	width: 80%;
+	height: 70%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 10px;
+	flex-wrap: wrap;
+	perspective: 1000px;
 }
 
 /*
@@ -37,24 +37,24 @@ body {
 */
 
 .memory-card {
-    position: relative;
-    transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+	position: relative;
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: transform .5s;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
 }
 
 /*active when clicked*/
 
 .memory-card:active {
-    transform: scale(0.97);
-    transition: transform .2s;
+	transform: scale(0.97);
+	transition: transform .2s;
 }
 
 /*when the card is clicked JS activates this class and flips the card over*/
 
 .memory-card.flip {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
 /*
@@ -64,26 +64,27 @@ body {
 
 .front-face,
 .back-face {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    position: absolute;
-    border-radius: 5px;
-    background: #C7C6C6;
-    backface-visibility: hidden;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: absolute;
+	border-radius: 5px;
+	background: #c7c6c6;
+	backface-visibility: hidden;
 }
 
 /*the transform shows the logo on the back of the card*/
 
 .front-face {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
 .heading {
-    display: block;
-    text-align: center;
+	display: block;
+	text-align: center;
 }
 
 h1 {
-    font-family: Calibri;
+	font-family: Calibri;
+	font-size: 3em;
 }
